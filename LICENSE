@@ -1,0 +1,38 @@
+Mixed-license repository
+========================
+
+This repository combines two layers with different terms.
+
+----------------------------------------------------------------
+1. SCRIPTURES — `scriptures/**/*.md`
+----------------------------------------------------------------
+
+The Markdown files under `scriptures/` are dedicated to the public domain
+under the **Creative Commons CC0 1.0 Universal — Public Domain Dedication**:
+
+    https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+The author waives copyright and related rights to these files to the extent
+possible under law. You may copy, modify, distribute and perform the work,
+even for commercial purposes, all without asking permission.
+
+This dedication is consistent with the underlying source editions: the
+classical translators (Kumārajīva, Xuanzang, Tibetan translation teams,
+etc.) died more than a millennium ago, putting their work well beyond any
+copyright term in any jurisdiction. Modern foreign translations bundled
+here are either anonymous traditional liturgical transliterations, or
+translations from authors and editions whose protection terms have likewise
+expired, or AI-assisted translations whose output layer is not claimed
+under copyright.
+
+----------------------------------------------------------------
+2. WEBSITE — everything else (HTML, CSS, images, icons)
+----------------------------------------------------------------
+
+The remaining files in this repository — the landing page (`index.html`,
+`privacy.html`, `terms.html`, `styles.css`), the app icon and promotional
+posters under `icons/` and `posters/` — are © 2026 Rushi. All rights
+reserved.
+
+If you wish to reuse them (for translation, derivative works, study), please
+open a GitHub issue or contact rushi.app@protonmail.com.
