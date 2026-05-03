@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../icons/app-icon-180.png" alt="如是" width="128" height="128">
+  <img src="../icons/app-icon-rounded-256.png" alt="如是" width="128" height="128">
 </p>
 
 <h1 align="center">如是 Rushi</h1>
