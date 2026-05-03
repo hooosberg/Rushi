@@ -22,7 +22,7 @@ iOS 应用本身的 Swift 源码暂未公开，未来视情况开放。
 | 经文 | 状态 | 译本数 | 链接 |
 |------|------|--------|------|
 | 心经 Heart Sutra | ✅ 完整开源 | 11 种语言 | [`scriptures/xin-jing/`](./scriptures/xin-jing/) |
-| 金刚经 Diamond Sutra | 🚧 整理中 | 9 种译本 | 即将发布 |
+| 金刚经 Diamond Sutra | ✅ 完整开源 | 13 个版本（含鸠摩罗什 / 玄奘双汉译） | [`scriptures/jingang-jing/`](./scriptures/jingang-jing/) |
 
 ## 许可
 
