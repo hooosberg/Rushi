@@ -41,11 +41,9 @@
         ad networks.</li>
     <li><strong>Everything stays on your device.</strong> Reading progress,
         bead counts, dedication notes, copy strokes, and bead-style
-        preferences live only on your iPhone or iPad.</li>
-    <li>If you turn on iCloud sync, the data syncs through Apple's
-        <strong>private CloudKit database</strong> in your own iCloud
-        account — end-to-end encrypted by Apple. The developer cannot read
-        any of it.</li>
+        preferences live only on your iPhone or iPad. The current version
+        does <strong>not</strong> sync to iCloud or to any other server;
+        if you uninstall the app, all of this data is removed.</li>
   </ul>
 
   <h2>Mapping to Apple's "App Privacy Details"</h2>
@@ -72,8 +70,7 @@
 
   <h2>What the App stores on your device</h2>
   <p>The following items live inside the App's sandbox and are accessible
-  only to you (and, if you opt in to iCloud sync, your private iCloud
-  database):</p>
+  only to you. The data does not leave your device.</p>
   <table>
     <tr><th>Item</th><th>Storage</th></tr>
     <tr><td>Selected sutra and reading progress</td><td><code>UserDefaults</code></td></tr>
@@ -87,22 +84,13 @@
   <em>iOS Settings → General → iPhone Storage → Rushi</em>, or delete all
   local data by uninstalling the App.</p>
 
-  <h2>iCloud sync (optional)</h2>
-  <p>If you allow Rushi to use iCloud Drive in iOS system settings, the App
-  syncs the data above through Apple's
-  <strong>CloudKit private database</strong> within your own iCloud account.
-  We:</p>
-  <ul>
-    <li>do not own, cannot read, and cannot access anything in that iCloud
-        container;</li>
-    <li>do not transmit that data to any third party other than Apple;</li>
-    <li>rely on Apple's end-to-end encryption for the sync channel — see the
-        <a href="https://support.apple.com/guide/security/sec973254c5f/web">Apple
-        Platform Security guide</a>.</li>
-  </ul>
-  <p>To disable iCloud sync at any time:
-  <em>iOS Settings → your Apple ID → iCloud → iCloud Drive → turn off
-  Rushi</em>.</p>
+  <h2>iCloud sync</h2>
+  <p>The current version of the App does <strong>not</strong> sync to
+  iCloud and is not configured against any CloudKit container. If a
+  future update introduces optional iCloud sync, it will use Apple's
+  CloudKit private database (your own iCloud account, end-to-end
+  encrypted, unreadable by the developer); we will update this section
+  and prompt for your consent before any such sync begins.</p>
 
   <h2>System permissions</h2>
   <table>
@@ -113,6 +101,10 @@
     <tr><td>Contacts / Calendar / Reminders</td><td>No</td><td>—</td></tr>
     <tr><td>Photo Library</td><td>No</td><td>—</td></tr>
     <tr><td>Local Network / Bluetooth</td><td>No</td><td>—</td></tr>
+    <tr><td>Motion &amp; Orientation (CoreMotion)</td><td>Used silently if available</td>
+        <td>Solely to gently sway the on-screen pendant as you tilt your
+            device. Motion data is consumed only at the screen-render layer
+            and is not stored, logged, or transmitted anywhere.</td></tr>
     <tr><td>Notifications (only when you opt in to a recitation reminder)</td><td>Optional</td>
         <td>Local time-based reminders for sitting / recitation. All
             notifications are scheduled by iOS locally and never transmit any
@@ -122,9 +114,9 @@
   <h2>Third-party services and SDKs</h2>
   <p>The App <strong>integrates no third-party</strong> analytics,
   advertising, crash-reporting, authentication, or social-login SDK. It
-  depends only on the following Apple system frameworks: SwiftUI, UIKit,
-  SwiftData, CloudKit, Foundation, CoreText, and CoreMotion (the last for
-  the gentle pendant-swing physics).</p>
+  depends only on Apple system frameworks: SwiftUI, UIKit, SwiftData,
+  Foundation, CoreText, and CoreMotion (the last only for the gentle
+  pendant-swing physics).</p>
 
   <h2>Open-source scriptures</h2>
   <p>The Diamond Sutra, Heart Sutra, and all multi-language translations

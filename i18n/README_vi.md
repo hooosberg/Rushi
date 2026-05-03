@@ -52,7 +52,7 @@ Tên ứng dụng **如是** (*Như Thị*, "đúng như nó là") lấy từ c�
 
 - **Tĩnh từ trong thiết kế** — không chuỗi ngày liên tục, không huy hiệu, không nhắc nhở. Mỗi tính năng được thiết kế cho một thời tu trọn vẹn.
 - **Trung thành với bản nền** — mỗi đoạn ghi rõ dịch giả, niên đại, nguồn và cơ sở bản quyền. Kinh Kim Cang đính kèm cả hai bản Hán dịch của Cưu-ma-la-thập và Huyền Trang để đối chiếu.
-- **Thực sự nội bộ** — không tài khoản, không tải lên đám mây cho chúng tôi, không SDK phân tích. Đồng bộ iCloud (tùy chọn) dùng cơ sở dữ liệu CloudKit riêng tư của bạn, được Apple mã hóa đầu cuối.
+- **Thực sự nội bộ** — không tài khoản, không tải lên đám mây, không SDK phân tích. Phiên bản hiện tại lưu toàn bộ trong app sandbox; gỡ ứng dụng sẽ xóa sạch dữ liệu.
 
 ---
 
@@ -97,7 +97,7 @@ Dùng cho nghiên cứu, giảng dạy, đối chiếu, hoặc làm nền cho �
 | Theo dõi bên thứ ba | Không |
 | Yêu cầu mạng | Không (app hoàn toàn ngoại tuyến) |
 | Quyền yêu cầu | Thông báo (chỉ khi bạn bật nhắc nhở tụng đọc) |
-| Lưu trữ | App sandbox + iCloud riêng của bạn (tùy chọn) |
+| Lưu trữ | Chỉ app sandbox (gỡ là xóa) |
 | Nhãn riêng tư Apple | **Data Not Collected** |
 
 Văn bản đầy đủ: [**Privacy Policy**](https://hooosberg.github.io/Rushi/privacy.html) · [**Terms of Service**](https://hooosberg.github.io/Rushi/terms.html)
@@ -131,7 +131,7 @@ App đính kèm tập glyph con của [**Noto Serif CJK SC / TC**](https://githu
 
 ## 🛠 Ghi chú kỹ thuật
 
-App iOS dựng bằng Swift 5 / SwiftUI trên iOS 17. Lưu trữ nội bộ dùng SwiftData; dàn chữ kinh dùng CoreText (tự cài fallback chữ Hán có chân để vượt qua lỗi `UIFont(name:)` của iOS 17, qua `CTFontCreateWithName`); cảm giác đung đưa của móc treo dùng CoreMotion; đồng bộ iCloud riêng tư (tùy chọn) dùng CloudKit. Mã nguồn Swift hiện chưa mở; kho này chỉ chứa trang web công khai và bộ kinh.
+App iOS dựng bằng Swift 5 / SwiftUI trên iOS 17. Lưu trữ nội bộ dùng SwiftData; dàn chữ kinh dùng CoreText (tự cài fallback chữ Hán có chân để vượt qua lỗi `UIFont(name:)` của iOS 17, qua `CTFontCreateWithName`); cảm giác đung đưa của móc treo dùng CoreMotion. Mã nguồn Swift hiện chưa mở; kho này chỉ chứa trang web công khai và bộ kinh.
 
 ---
 

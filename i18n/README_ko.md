@@ -52,7 +52,7 @@
 
 - **고요한 디자인** — 연속 기록 없음, 배지 없음, 알림 재촉 없음. 모든 기능은 「온전한 한 번의 수행」을 위해 설계되었습니다.
 - **저본에 충실** — 각 단락에 역자 · 저본 연대 · 출처 · 저작권 근거 명기. 금강경은 구마라집과 현장 두 한역을 함께 수록하여 대조 가능.
-- **진짜 로컬** — 계정 없음, 클라우드 업로드 없음, 분석 SDK 없음. 선택적 iCloud 동기화는 본인의 비공개 CloudKit 데이터베이스를 사용하며 Apple 의 종단간 암호화로 보호됩니다.
+- **진짜 로컬** — 계정 없음, 클라우드 업로드 없음, 분석 SDK 없음. 현재 버전은 모든 데이터를 앱 샌드박스 안에만 저장하며, 앱 제거 시 모든 데이터가 사라집니다.
 
 ---
 
@@ -97,7 +97,7 @@
 | 제삼자 추적 | 없음 |
 | 네트워크 요청 | 없음 (전체 앱 오프라인) |
 | 권한 요청 | 알림 (독송 알림 활성화 시에만) |
-| 데이터 저장 | 앱 샌드박스 + 본인의 비공개 iCloud (선택) |
+| 데이터 저장 | 앱 샌드박스만 (제거하면 모두 삭제) |
 | Apple 개인정보 라벨 | **Data Not Collected** |
 
 전체 텍스트: [**Privacy Policy**](https://hooosberg.github.io/Rushi/privacy.html) · [**Terms of Service**](https://hooosberg.github.io/Rushi/terms.html)
@@ -131,7 +131,7 @@
 
 ## 🛠 기술 노트
 
-iOS 앱은 Swift 5 / SwiftUI, iOS 17 위에서 빌드. 로컬 저장은 SwiftData; 경문 조판은 CoreText (iOS 17 의 `UIFont(name:)` 버그를 우회하는 자체 중국어 세리프 폴백, `CTFontCreateWithName` 경유); 매달이 흔들림 감각은 CoreMotion; 선택적 비공개 iCloud 동기화는 CloudKit. Swift 소스 코드는 아직 오픈소스화되지 않았습니다. 본 저장소는 공개 웹사이트와 경전 코퍼스만 포함합니다.
+iOS 앱은 Swift 5 / SwiftUI, iOS 17 위에서 빌드. 로컬 저장은 SwiftData; 경문 조판은 CoreText (iOS 17 의 `UIFont(name:)` 버그를 우회하는 자체 중국어 세리프 폴백, `CTFontCreateWithName` 경유); 매달이 흔들림 감각은 CoreMotion 사용. Swift 소스 코드는 아직 오픈소스화되지 않았습니다. 본 저장소는 공개 웹사이트와 경전 코퍼스만 포함합니다.
 
 ---
 

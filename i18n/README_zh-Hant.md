@@ -52,7 +52,7 @@
 
 - **安靜設計** —— 沒有連續打卡、沒有徽章、沒有提醒催促。每個功能都圍繞「一次完整的修持」而設計。
 - **忠實底本** —— 每段經文都標註譯者、底本年代、出處與版權來源。金剛經同時收錄鳩摩羅什與玄奘兩種漢譯，方便對讀。
-- **真正本地** —— 無帳號、無雲端上傳、無分析 SDK。可選 iCloud 同步使用你自己的私人 CloudKit 資料庫，由 Apple 端對端加密。
+- **真正本地** —— 無帳號、無雲端上傳、無分析 SDK。目前版本所有資料都僅保存在 app sandbox 中；解除安裝即清除全部資料。
 
 ---
 
@@ -97,7 +97,7 @@
 | 第三方追蹤 | 無 |
 | 網路請求 | 無（整個 app 離線） |
 | 權限請求 | 通知（僅在你主動開啟誦讀提醒時） |
-| 資料儲存 | app sandbox + 你的私人 iCloud（可選） |
+| 資料儲存 | 僅 app sandbox（解除安裝即清除） |
 | Apple 隱私標籤 | **Data Not Collected** |
 
 完整文本：[**Privacy Policy**](https://hooosberg.github.io/Rushi/privacy.html) · [**Terms of Service**](https://hooosberg.github.io/Rushi/terms.html)
@@ -131,7 +131,7 @@
 
 ## 🛠 技術說明
 
-iOS app 使用 Swift 5 / SwiftUI 在 iOS 17 上建構：本地儲存用 SwiftData；經文排版用 CoreText（自行實作繞過 iOS 17 `UIFont(name:)` bug 的中文襯線 fallback，透過 `CTFontCreateWithName`）；掛飾擺動手感用 CoreMotion；可選私人 iCloud 同步用 CloudKit。Swift 原始碼暫未開源；本倉庫僅包含落地頁和經文。
+iOS app 使用 Swift 5 / SwiftUI 在 iOS 17 上建構：本地儲存用 SwiftData；經文排版用 CoreText（自行實作繞過 iOS 17 `UIFont(name:)` bug 的中文襯線 fallback，透過 `CTFontCreateWithName`）；掛飾擺動手感用 CoreMotion。Swift 原始碼暫未開源；本倉庫僅包含落地頁和經文。
 
 ---
 

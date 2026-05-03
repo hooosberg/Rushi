@@ -52,7 +52,7 @@ Der Name **如是** ("Soheit", *tathatā*) ist die Eröffnungsphrase des Diamant
 
 - **Leise gestaltet** — keine Streaks, keine Abzeichen, keine Erinnerungen. Jede Funktion ist auf eine einzige vollständige Sitzung ausgelegt.
 - **Quellentreu** — jeder Abschnitt nennt Übersetzer, Quellausgabe, Datum und Urheberrechtsbasis. Beide chinesischen Diamant-Sutra-Übersetzungen (Kumārajīva und Xuanzang) sind enthalten.
-- **Wirklich lokal** — kein Konto, keine Cloud bei uns, keine Analytik. Optionale iCloud-Synchronisation nutzt deine private CloudKit-Datenbank, end-zu-end von Apple verschlüsselt.
+- **Wirklich lokal** — kein Konto, keine Cloud, keine Analytik. Die aktuelle Version speichert alles in der App-Sandbox; beim Deinstallieren werden alle Daten entfernt.
 
 ---
 
@@ -97,7 +97,7 @@ Nutzbar für Forschung, Lehre, vergleichende Lektüre oder als Ausgangspunkt fü
 | Drittanbieter-Tracker | Keine |
 | Netzwerkanfragen | Keine (gesamte App offline) |
 | Berechtigungen | Benachrichtigungen (nur wenn du eine Rezitations-Erinnerung aktivierst) |
-| Speicherung | App-Sandbox + deine private iCloud (optional) |
+| Speicherung | Nur App-Sandbox (Deinstallation entfernt alles) |
 | Apple-Datenschutzlabel | **Data Not Collected** |
 
 Volltext: [**Privacy Policy**](https://hooosberg.github.io/Rushi/privacy.html) · [**Terms of Service**](https://hooosberg.github.io/Rushi/terms.html)
@@ -131,7 +131,7 @@ Die App enthält ein Glyph-Subset von [**Noto Serif CJK SC / TC**](https://githu
 
 ## 🛠 Technische Notizen
 
-Die iOS-App ist in Swift 5 / SwiftUI auf iOS 17 gebaut. Lokale Speicherung mit SwiftData; Sutra-Typografie über CoreText (mit eigener chinesischer Serif-Fallback-Logik, die den iOS-17-Bug von `UIFont(name:)` über `CTFontCreateWithName` umgeht); CoreMotion für die sanfte Anhänger-Schwingphysik; CloudKit für die optionale private iCloud-Synchronisation. Der Swift-Quellcode ist noch nicht Open-Source; dieses Repository enthält nur die öffentliche Website und den Sutra-Korpus.
+Die iOS-App ist in Swift 5 / SwiftUI auf iOS 17 gebaut. Lokale Speicherung mit SwiftData; Sutra-Typografie über CoreText (mit eigener chinesischer Serif-Fallback-Logik, die den iOS-17-Bug von `UIFont(name:)` über `CTFontCreateWithName` umgeht); CoreMotion für die sanfte Anhänger-Schwingphysik. Der Swift-Quellcode ist noch nicht Open-Source; dieses Repository enthält nur die öffentliche Website und den Sutra-Korpus.
 
 ---
 

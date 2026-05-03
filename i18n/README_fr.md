@@ -52,7 +52,7 @@ Le nom **如是** ("Telleté", *tathatā*) ouvre le Sutra du Diamant : **如是�
 
 - **Conçue pour le silence** — pas de séries, pas de badges, pas de relances. Chaque fonction est pensée pour une seule séance complète.
 - **Fidèle à la source** — chaque passage indique traducteur, édition source, date et base juridique. Les deux traductions chinoises du Sutra du Diamant (Kumārajīva et Xuanzang) sont incluses.
-- **Vraiment locale** — pas de compte, pas de cloud chez nous, pas d’analytique. La synchronisation iCloud (optionnelle) utilise votre base CloudKit privée, chiffrée de bout en bout par Apple.
+- **Vraiment locale** — pas de compte, pas de cloud, pas d’analytique. La version actuelle stocke tout dans la sandbox de l’app ; désinstaller supprime toutes les données.
 
 ---
 
@@ -97,7 +97,7 @@ Chaque fichier Markdown indique en en-tête YAML :
 | Pisteurs tiers | Aucun |
 | Requêtes réseau | Aucune (app entièrement hors ligne) |
 | Permissions demandées | Notifications (uniquement si vous activez un rappel de récitation) |
-| Stockage | Sandbox de l’app + iCloud privé (en option) |
+| Stockage | Sandbox de l’app uniquement (désinstaller supprime tout) |
 | Étiquette Apple | **Data Not Collected** |
 
 Texte complet : [**Privacy Policy**](https://hooosberg.github.io/Rushi/privacy.html) · [**Terms of Service**](https://hooosberg.github.io/Rushi/terms.html)
@@ -131,7 +131,7 @@ L’app embarque un sous-ensemble de glyphes de [**Noto Serif CJK SC / TC**](htt
 
 ## 🛠 Notes techniques
 
-L’app iOS est construite en Swift 5 / SwiftUI sur iOS 17. Stockage local via SwiftData ; typographie des sutras via CoreText (avec un repli sérif chinois maison qui contourne le bug d’iOS 17 sur `UIFont(name:)` via `CTFontCreateWithName`) ; CoreMotion pour la physique douce du pendentif ; CloudKit pour la synchronisation iCloud privée optionnelle. Le code source Swift n’est pas encore open source ; ce dépôt ne contient que le site public et le corpus des sutras.
+L’app iOS est construite en Swift 5 / SwiftUI sur iOS 17. Stockage local via SwiftData ; typographie des sutras via CoreText (avec un repli sérif chinois maison qui contourne le bug d’iOS 17 sur `UIFont(name:)` via `CTFontCreateWithName`) ; CoreMotion pour la physique douce du pendentif. Le code source Swift n’est pas encore open source ; ce dépôt ne contient que le site public et le corpus des sutras.
 
 ---
 

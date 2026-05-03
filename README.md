@@ -52,7 +52,7 @@ The name **如是** ("Thusness", *tathatā*) is the first phrase of the Diamond 
 
 - **Quiet by design** — no streaks, no badges, no nudges. Each feature is shaped around a single complete sitting.
 - **Faithful to the source** — every passage carries translator, source edition, date, and copyright provenance. Two Chinese translations (Kumārajīva and Xuanzang) are both included for comparison.
-- **Truly local** — no account, no cloud upload to us, no analytics SDK. Optional iCloud sync uses your own private CloudKit database, end-to-end encrypted by Apple.
+- **Truly local** — no account, no cloud upload, no analytics SDK. The current version stores everything inside the app sandbox; uninstalling the app removes all data.
 
 ---
 
@@ -97,7 +97,7 @@ Use it for research, teaching, comparative reading, or as a starting point for y
 | Third-party trackers | None |
 | Network requests | None (entire app is offline) |
 | Permissions requested | Notifications (only if you opt in to a recitation reminder) |
-| Storage | App sandbox + your private iCloud (optional) |
+| Storage | App sandbox only (uninstall removes everything) |
 | Apple privacy label | **Data Not Collected** |
 
 Full text: [**Privacy Policy**](https://hooosberg.github.io/Rushi/privacy.html) · [**Terms of Service**](https://hooosberg.github.io/Rushi/terms.html)
@@ -131,7 +131,7 @@ The app bundles a glyph subset of [**Noto Serif CJK SC / TC**](https://github.co
 
 ## 🛠 Tech notes
 
-The iOS app is built in Swift 5 / SwiftUI on iOS 17 with SwiftData for local storage, CoreText for sutra typography (custom Chinese serif fallback that bypasses the iOS 17 `UIFont(name:)` bug via `CTFontCreateWithName`), CoreMotion for the gentle pendant-swing physics, and CloudKit for the optional private iCloud sync. The Swift source is not yet open-sourced; this repository contains only the public website and scripture corpus.
+The iOS app is built in Swift 5 / SwiftUI on iOS 17 with SwiftData for local storage, CoreText for sutra typography (custom Chinese serif fallback that bypasses the iOS 17 `UIFont(name:)` bug via `CTFontCreateWithName`), and CoreMotion for the gentle pendant-swing physics. The Swift source is not yet open-sourced; this repository contains only the public website and scripture corpus.
 
 ---
 
