@@ -1,60 +1,167 @@
-# 如是 Rushi
+<p align="center">
+  <img src="icons/app-icon-180.png" alt="Rushi" width="128" height="128">
+</p>
 
-> 一念一珠，安住当下 · One bead, one breath, one moment
+<h1 align="center">Rushi 如是</h1>
 
-[**官网**](https://hooosberg.github.io/Rushi/) · [**隐私政策**](https://hooosberg.github.io/Rushi/privacy.html) · [**服务条款**](https://hooosberg.github.io/Rushi/terms.html)
+<p align="center">
+  <strong>One bead, one breath, one moment</strong>
+  <br>
+  Diamond Sutra &amp; Heart Sutra · 17 languages · 100% on-device
+  <br>
+  <a href="https://hooosberg.github.io/Rushi/">🌐 Official Website</a>
+</p>
 
-**如是 (Rushi)** 是一款 iPhone / iPad 上的清净修持应用：金刚经 / 心经多语种诵读、108 颗念珠、抄经面板、冥想音景。所有数据保存在设备本地，不联系任何外部服务器。
+<p align="center">
+  <a href="README.md">English</a> |
+  <a href="i18n/README_zh-Hans.md">简体中文</a> |
+  <a href="i18n/README_zh-Hant.md">繁體中文</a> |
+  <a href="i18n/README_ja.md">日本語</a> |
+  <a href="i18n/README_ko.md">한국어</a> |
+  <a href="i18n/README_vi.md">Tiếng Việt</a> |
+  <a href="i18n/README_de.md">Deutsch</a> |
+  <a href="i18n/README_fr.md">Français</a> |
+  <a href="i18n/README_th.md">ไทย</a>
+</p>
 
-> 「如是我闻。一时，佛在舍卫国祇树给孤独园…」 —— 金刚经
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/scriptures-CC0%201.0-1e88e5.svg" alt="Scriptures: CC0"></a>
+  <img src="https://img.shields.io/badge/platform-iOS%2017+-444.svg" alt="iOS 17+">
+  <img src="https://img.shields.io/badge/devices-iPhone%20%7C%20iPad-555.svg" alt="iPhone & iPad">
+  <br>
+  <img src="https://img.shields.io/badge/sutras-13%20editions-43a047.svg" alt="13 sutra editions">
+  <img src="https://img.shields.io/badge/UI%20languages-17-43a047.svg" alt="17 UI languages">
+  <img src="https://img.shields.io/badge/privacy-Data%20Not%20Collected-2e7d32.svg" alt="Data Not Collected">
+</p>
 
-## 这个仓库放什么？
+<p align="center">
+  <a href="https://hooosberg.github.io/Rushi/">
+    <img src="posters/sheet-en.webp" alt="Rushi — five-screen preview" width="720">
+  </a>
+</p>
 
-这个仓库**不是**整个 iOS 应用的源代码。它包含的是：
+> 🚧 **App Store: coming soon.** Source scriptures are already public — see `scriptures/` below.
 
-- **`/`（根目录）** — 应用官网（GitHub Pages 自动构建），含隐私政策、服务条款、宣传材料。
-- **[`scriptures/`](./scriptures/)** — 应用内显示的所有经文文本，作为开源公共财释出。每个文件带 YAML front-matter 记录译者、底本、版权来源和编辑说明。
+**Rushi (如是)** is a quiet iPhone &amp; iPad app for reading the **Diamond Sutra** and **Heart Sutra**, working a 108-bead mala, copying scripture, and sitting with meditation soundscapes. Everything stays on your device — no account, no analytics, no third-party trackers.
 
-iOS 应用本身的 Swift 源码暂未公开，未来视情况开放。
+The name **如是** ("Thusness", *tathatā*) is the first phrase of the Diamond Sutra: **如是我闻** — *"Thus have I heard."* It is the stance the app tries to embody: read what is here, count what is here, breathe where you are.
 
-## 已开源的经文
+---
 
-| 经文 | 状态 | 译本数 | 链接 |
-|------|------|--------|------|
-| 心经 Heart Sutra | ✅ 完整开源 | 11 种语言 | [`scriptures/xin-jing/`](./scriptures/xin-jing/) |
-| 金刚经 Diamond Sutra | ✅ 完整开源 | 13 个版本（含鸠摩罗什 / 玄奘双汉译） | [`scriptures/jingang-jing/`](./scriptures/jingang-jing/) |
+## 🌟 Design philosophy
 
-## 许可
+- **Quiet by design** — no streaks, no badges, no nudges. Each feature is shaped around a single complete sitting.
+- **Faithful to the source** — every passage carries translator, source edition, date, and copyright provenance. Two Chinese translations (Kumārajīva and Xuanzang) are both included for comparison.
+- **Truly local** — no account, no cloud upload to us, no analytics SDK. Optional iCloud sync uses your own private CloudKit database, end-to-end encrypted by Apple.
 
-- **`scriptures/`** 下所有 Markdown 文件：[CC0 1.0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/) — 自由使用，无需署名。底层经文出自公有领域（古译者圆寂超过千年，现代外文译本均超过版权期）。
-- **网站文件**（HTML / CSS / 图片）：保留所有权利 © 2026 Rushi。如要复用样式或文字，请通过 issue 联系。
-- **app icon 和宣传海报**：保留所有权利。
+---
 
-## 应用介绍
+## ✨ Features
 
-### 功能
+- 📖 **Read** — Diamond Sutra (Kumārajīva 5 c. + Xuanzang 7 c. Chinese) and Heart Sutra in calligraphic serif typography. 17 UI languages, 9 sutra translations, every passage annotated.
+- 📿 **Mala beads** — Realistic wood, jade, bodhi, and silver beads you can string and finish with a pendant. Tap to count; 108 beads complete one dedication. The current sutra passage scrolls quietly behind the strand.
+- 🖋 **Copy practice** — A clean grid-based canvas with stylus and touch support. The original text fades in as a guide; trace one character at a time and save the finished sheet.
+- 🎵 **Meditation sounds** — Wooden fish, singing bowl, bell, hand bell, rain, bamboo grove. Each loop is seamless and freely layerable. No network required.
+- 🪷 **Dedication & history** — After each completed mala, write a short intention. Stored on-device, sorted by date and sutra, visible only to you.
+- 🔒 **On-device only** — No sign-up, no cloud sync to us, no analytics. Apple App Store privacy label: **"Data Not Collected."**
 
-- **读经** — 金刚经（鸠摩罗什 / 玄奘两种汉译）+ 心经，呈现于书法衬线排版。可切换 17 种界面语言、9 种经文译本，每段标注完整出处。
-- **念珠** — 真实质感的木珠 / 玉珠 / 菩提子 / 银饰；自由组合搭配挂饰；点击计数，108 颗一回向；背景同步显示当前所读经文段落。
-- **抄经** — 一字一格清净抄经面板，支持手写笔与触屏；原文淡字底+依次描红。
-- **冥想音景** — 木鱼、磬、钟、铃铛、雨、竹林；离线即可静坐。
-- **回向** — 每完成一回念珠，写下当下意图，私密保存于设备。
+---
 
-### 隐私
+## 📜 Open-source scriptures
 
-- 不收集任何个人信息（Apple App Store 隐私标签：**Data Not Collected**）。
-- 不联系任何外部服务器；无网络请求、无分析 SDK、无第三方追踪、无广告。
-- 所有数据仅保存在 app sandbox。可选 iCloud 同步使用 Apple 私人数据库（端到端加密）。
+Every sutra passage shipped with the app comes from a verified public-domain source edition. The cleaned-up Markdown corpus is released here under [**CC0 1.0 Public Domain Dedication**](https://creativecommons.org/publicdomain/zero/1.0/).
 
-完整：[隐私政策](https://hooosberg.github.io/Rushi/privacy.html)
+| Sutra | Editions | Languages | Folder |
+|-------|----------|-----------|--------|
+| 心经 · Heart Sutra | 1 short recension | 11 languages | [`scriptures/xin-jing/`](scriptures/xin-jing/) |
+| 金刚经 · Diamond Sutra | 13 versions (Kumārajīva + Xuanzang Chinese, Goddard 1932 English, Walleser 1914 German, 9-c Tibetan, 1935 NDL Japanese, 1922 Baek Yongseong Korean, and more) | 13 editions | [`scriptures/jingang-jing/`](scriptures/jingang-jing/) |
 
-### 字体
+Each Markdown file declares, in its YAML front matter:
 
-应用捆绑 [Noto Serif CJK SC / TC](https://github.com/notofonts/noto-cjk) 字体子集，[SIL Open Font License 1.1](https://scripts.sil.org/OFL)。
+- translator and dates
+- source edition name and URL
+- copyright basis (jurisdiction-by-jurisdiction reasoning where relevant)
+- editorial status (`final` / `verified` / `ai-cross-reviewed`)
+- editorial notes
 
-## 反馈
+Use it for research, teaching, comparative reading, or as a starting point for your own app — no attribution required, but appreciated.
 
-- **GitHub Issues**：[hooosberg/Rushi/issues](https://github.com/hooosberg/Rushi/issues)
-- **Email**：zikedece@proton.me
+---
 
-如经文有任何错字、版权疑问或更佳底本，请直接开 issue 或 PR。
+## 🔒 Privacy at a glance
+
+| | |
+|---|---|
+| Personal info | None collected |
+| Analytics SDKs | None |
+| Third-party trackers | None |
+| Network requests | None (entire app is offline) |
+| Permissions requested | Notifications (only if you opt in to a recitation reminder) |
+| Storage | App sandbox + your private iCloud (optional) |
+| Apple privacy label | **Data Not Collected** |
+
+Full text: [**Privacy Policy**](https://hooosberg.github.io/Rushi/privacy.html) · [**Terms of Service**](https://hooosberg.github.io/Rushi/terms.html)
+
+---
+
+## 🔤 Bundled fonts
+
+The app bundles a glyph subset of [**Noto Serif CJK SC / TC**](https://github.com/notofonts/noto-cjk) so that Chinese serif renders reliably even on iOS Simulator runtimes that have stripped Songti / PingFang. Font is licensed under the [SIL Open Font License 1.1](https://scripts.sil.org/OFL); the OFL LICENSE file ships inside the app bundle.
+
+---
+
+## 🗂 Repository layout
+
+```
+.
+├── index.html              landing page (GitHub Pages)
+├── privacy.html            privacy policy (English, authoritative)
+├── terms.html              terms of service (English, authoritative)
+├── i18n.js                 site-side i18n + language picker
+├── styles.css              site styles
+├── icons/                  app icons (1024 master + 8 sizes)
+├── posters/                App Store promo posters in 9 languages
+├── scriptures/
+│   ├── xin-jing/           Heart Sutra (11 languages, CC0)
+│   └── jingang-jing/       Diamond Sutra (13 editions, CC0)
+└── i18n/                   translated copies of this README
+```
+
+---
+
+## 🛠 Tech notes
+
+The iOS app is built in Swift 5 / SwiftUI on iOS 17 with SwiftData for local storage, CoreText for sutra typography (custom Chinese serif fallback that bypasses the iOS 17 `UIFont(name:)` bug via `CTFontCreateWithName`), CoreMotion for the gentle pendant-swing physics, and CloudKit for the optional private iCloud sync. The Swift source is not yet open-sourced; this repository contains only the public website and scripture corpus.
+
+---
+
+## 🌐 Sibling projects
+
+Built by [hooosberg](https://github.com/hooosberg):
+
+- [WitNote](https://hooosberg.github.io/WitNote/) — local-first AI writing companion
+- [AgentLimb](https://agentlimb.com) — teach AI to control your browser
+- [BeRaw](https://hooosberg.github.io/BeRaw/) — Behance raw-image grabber
+- [Packpour](https://hooosberg.github.io/Packpour/) — App Store Connect locale filler
+- [GlotShot](https://hooosberg.github.io/GlotShot/) — perfect App Store preview images
+- [TrekReel](https://hooosberg.github.io/TrekReel/) — outdoor trails, cinematic reels
+- [DOMPrompter](https://hooosberg.github.io/DOMPrompter/) — visualize DOM for AI code
+- [UIXskills](https://uixskills.com) — AI → JSON → Whiteboard → UI
+
+---
+
+## 👨‍💻 Developer
+
+**hooosberg**
+
+📧 [zikedece@proton.me](mailto:zikedece@proton.me)
+
+🔗 [https://github.com/hooosberg/Rushi](https://github.com/hooosberg/Rushi)
+
+🐛 Found a wrong character or a better source edition? Please open an [issue](https://github.com/hooosberg/Rushi/issues) or PR.
+
+---
+
+<p align="center">
+  <i>One bead, one breath, one moment<br>如是我闻</i>
+</p>
