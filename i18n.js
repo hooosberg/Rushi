@@ -451,10 +451,19 @@
     },
   };
 
+  // Native names of each supported language, used in both the dropdown list
+  // and the trigger button. Native script keeps the menu legible to people
+  // who don't read the current UI language.
   const langDisplayNames = {
-    'zh-Hans': '简体', 'zh-Hant': '繁體', 'en': 'EN',
-    'ja': '日本語', 'ko': '한국어', 'vi': 'Tiếng Việt',
-    'de': 'Deutsch', 'fr': 'Français', 'th': 'ไทย',
+    'zh-Hans': '简体中文',
+    'zh-Hant': '繁體中文',
+    'en':      'English',
+    'ja':      '日本語',
+    'ko':      '한국어',
+    'vi':      'Tiếng Việt',
+    'de':      'Deutsch',
+    'fr':      'Français',
+    'th':      'ไทย',
   };
 
   // ------------------------------------------------------------------
@@ -509,100 +518,81 @@
       el.innerHTML = t(lang, key);
     });
 
-    // Lang switcher state
+    // Dropdown trigger label + active item
+    const triggerLabel = document.querySelector('[data-lang-current]');
+    if (triggerLabel) triggerLabel.textContent = langDisplayNames[lang];
     document.querySelectorAll('[data-lang-pill]').forEach((el) => {
       el.classList.toggle('active', el.getAttribute('data-lang-pill') === lang);
     });
 
-    // Carousel posters
-    swapCarouselPosters(lang);
+    // Hero poster row — swap to language-specific posters
+    swapHeroPosters(lang);
 
     try { localStorage.setItem(STORAGE_KEY, lang); } catch (_) {}
   }
 
-  function swapCarouselPosters(lang) {
+  function swapHeroPosters(lang) {
     const folder = POSTER_LANGS.includes(lang) ? lang : 'en';
-    document.querySelectorAll('[data-carousel-img]').forEach((img) => {
-      const slide = img.getAttribute('data-carousel-img');
+    document.querySelectorAll('[data-poster-img]').forEach((img) => {
+      const slide = img.getAttribute('data-poster-img');
       img.src = `./posters/${folder}/${slide}.webp`;
     });
   }
 
   // ------------------------------------------------------------------
-  // Carousel
-  // ------------------------------------------------------------------
-  function initCarousel() {
-    const root = document.querySelector('[data-carousel]');
-    if (!root) return;
-    const track = root.querySelector('[data-carousel-track]');
-    const slidesEls = root.querySelectorAll('[data-carousel-slide]');
-    const dotsBox = root.querySelector('[data-carousel-dots]');
-    const prev = root.querySelector('[data-carousel-prev]');
-    const next = root.querySelector('[data-carousel-next]');
-
-    let idx = 0;
-    const total = slidesEls.length;
-
-    // Build dots
-    for (let i = 0; i < total; i++) {
-      const dot = document.createElement('button');
-      dot.className = 'carousel-dot';
-      dot.setAttribute('aria-label', `Slide ${i + 1}`);
-      dot.addEventListener('click', () => go(i));
-      dotsBox.appendChild(dot);
-    }
-
-    function render() {
-      track.style.transform = `translateX(${-idx * 100}%)`;
-      dotsBox.querySelectorAll('.carousel-dot').forEach((d, i) => {
-        d.classList.toggle('active', i === idx);
-      });
-    }
-
-    function go(i) {
-      idx = (i + total) % total;
-      render();
-    }
-
-    prev.addEventListener('click', () => go(idx - 1));
-    next.addEventListener('click', () => go(idx + 1));
-
-    // Touch swipe
-    let startX = 0, dx = 0;
-    track.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX; dx = 0;
-    }, { passive: true });
-    track.addEventListener('touchmove', (e) => {
-      dx = e.touches[0].clientX - startX;
-    }, { passive: true });
-    track.addEventListener('touchend', () => {
-      if (Math.abs(dx) > 40) go(idx + (dx < 0 ? 1 : -1));
-    });
-
-    // Keyboard
-    root.tabIndex = 0;
-    root.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') go(idx - 1);
-      if (e.key === 'ArrowRight') go(idx + 1);
-    });
-
-    render();
-  }
-
-  // ------------------------------------------------------------------
-  // Lang switcher rendering (called after DOM ready)
+  // Lang dropdown — auto-picks browser language on first visit, persists
+  // user choice afterwards in localStorage.
   // ------------------------------------------------------------------
   function buildLangSwitcher() {
     const host = document.querySelector('[data-lang-switcher]');
     if (!host) return;
+
+    const trigger = document.createElement('button');
+    trigger.className = 'lang-dropdown-trigger';
+    trigger.setAttribute('aria-haspopup', 'true');
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.innerHTML = `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+      <span data-lang-current>简体中文</span>
+      <span class="caret">▾</span>
+    `;
+
+    const menu = document.createElement('div');
+    menu.className = 'lang-dropdown-menu';
+    menu.setAttribute('role', 'menu');
+
     SUPPORTED.forEach((lang) => {
-      const a = document.createElement('button');
-      a.className = 'lang-pill';
-      a.setAttribute('data-lang-pill', lang);
-      a.textContent = langDisplayNames[lang];
-      a.addEventListener('click', () => applyLang(lang));
-      host.appendChild(a);
+      const item = document.createElement('button');
+      item.className = 'lang-dropdown-item';
+      item.setAttribute('data-lang-pill', lang);
+      item.setAttribute('role', 'menuitem');
+      item.textContent = langDisplayNames[lang];
+      item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        applyLang(lang);
+        closeMenu();
+      });
+      menu.appendChild(item);
     });
+
+    function openMenu()  { menu.classList.add('open');    trigger.setAttribute('aria-expanded', 'true'); }
+    function closeMenu() { menu.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false'); }
+    function toggleMenu(){ menu.classList.contains('open') ? closeMenu() : openMenu(); }
+
+    trigger.addEventListener('click', (e) => { e.stopPropagation(); toggleMenu(); });
+    document.addEventListener('click', (e) => {
+      if (!host.contains(e.target)) closeMenu();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    host.appendChild(trigger);
+    host.appendChild(menu);
   }
 
   // ------------------------------------------------------------------
@@ -610,7 +600,6 @@
   // ------------------------------------------------------------------
   function boot() {
     buildLangSwitcher();
-    initCarousel();
     applyLang(detectLang());
   }
 

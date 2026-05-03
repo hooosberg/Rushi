@@ -66,7 +66,14 @@
       <img src="./icons/app-icon-64.png" alt="Rushi 如是 app icon">
       <span><span class="name-cn">如是</span><span class="name-en">Rushi</span></span>
     </a>
-    <div class="lang-switcher" data-lang-switcher></div>
+    <div class="nav-links">
+      <a href="#features" data-i18n="nav.features">功能</a>
+      <a href="#screens" data-i18n="nav.screenshots">截图</a>
+      <a href="#sutras" data-i18n="nav.sutras">开源经文</a>
+      <a href="#privacy-promise" data-i18n="nav.privacy">隐私</a>
+      <a href="https://github.com/hooosberg/Rushi" class="btn btn-outline" style="padding:7px 16px;font-size:13px" data-i18n="nav.github">GitHub</a>
+      <div class="lang-dropdown" data-lang-switcher></div>
+    </div>
   </div>
 </nav>
 
@@ -94,37 +101,29 @@
   <div class="hero-meta">
     <span data-i18n="hero.meta.iphone">iPhone &amp; iPad</span>
     <span data-i18n="hero.meta.ios">iOS 17 +</span>
-    <span data-i18n="hero.meta.free">免费</span>
     <span data-i18n="hero.meta.noads">无广告</span>
     <span data-i18n="hero.meta.local">本地存储</span>
   </div>
 </section>
 
-<!-- ============================ Hero carousel ============================ -->
-<div class="carousel-wrap">
-  <div class="carousel" data-carousel>
-    <button class="carousel-btn carousel-prev" data-carousel-prev aria-label="Previous slide">‹</button>
-    <button class="carousel-btn carousel-next" data-carousel-next aria-label="Next slide">›</button>
-    <div class="carousel-track" data-carousel-track>
-      <div class="carousel-slide" data-carousel-slide>
-        <img data-carousel-img="01-read-diamond-sutra" src="./posters/zh-Hans/01-read-diamond-sutra.webp" alt="Read the Diamond Sutra" loading="eager">
-      </div>
-      <div class="carousel-slide" data-carousel-slide>
-        <img data-carousel-img="02-mindful-beads" src="./posters/zh-Hans/02-mindful-beads.webp" alt="Mindful mala beads" loading="lazy">
-      </div>
-      <div class="carousel-slide" data-carousel-slide>
-        <img data-carousel-img="03-copy-practice" src="./posters/zh-Hans/03-copy-practice.webp" alt="Copy practice" loading="lazy">
-      </div>
-      <div class="carousel-slide" data-carousel-slide>
-        <img data-carousel-img="04-meditation-sounds" src="./posters/zh-Hans/04-meditation-sounds.webp" alt="Meditation soundscapes" loading="lazy">
-      </div>
-      <div class="carousel-slide" data-carousel-slide>
-        <img data-carousel-img="05-bead-library" src="./posters/zh-Hans/05-bead-library.webp" alt="Bead library" loading="lazy">
-      </div>
-    </div>
+<!-- ============================ Hero poster row ============================ -->
+<section class="hero-posters" id="screens" aria-label="App screens">
+  <div class="hero-poster">
+    <img data-poster-img="01-read-diamond-sutra" src="./posters/zh-Hans/01-read-diamond-sutra.webp" alt="Read the Diamond Sutra" loading="eager">
   </div>
-  <div class="carousel-dots" data-carousel-dots></div>
-</div>
+  <div class="hero-poster">
+    <img data-poster-img="02-mindful-beads" src="./posters/zh-Hans/02-mindful-beads.webp" alt="Mindful mala beads" loading="lazy">
+  </div>
+  <div class="hero-poster">
+    <img data-poster-img="03-copy-practice" src="./posters/zh-Hans/03-copy-practice.webp" alt="Copy practice" loading="lazy">
+  </div>
+  <div class="hero-poster">
+    <img data-poster-img="04-meditation-sounds" src="./posters/zh-Hans/04-meditation-sounds.webp" alt="Meditation soundscapes" loading="lazy">
+  </div>
+  <div class="hero-poster">
+    <img data-poster-img="05-bead-library" src="./posters/zh-Hans/05-bead-library.webp" alt="Bead library" loading="lazy">
+  </div>
+</section>
 
 <!-- ============================ Stats ============================ -->
 <div class="stat-row">
@@ -253,7 +252,7 @@
       <div class="foot-col">
         <span class="foot-col-title" data-i18n="foot.app">应用</span>
         <a href="#features" data-i18n="feat.eyebrow">功能</a>
-        <a href="#screenshots" data-i18n="shots.eyebrow">界面</a>
+        <a href="#screens" data-i18n="nav.screenshots">截图</a>
         <a href="#sutras" data-i18n="sutras.eyebrow">开源</a>
       </div>
       <div class="foot-col">
