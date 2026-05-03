@@ -55,6 +55,6 @@ iOS 应用本身的 Swift 源码暂未公开，未来视情况开放。
 ## 反馈
 
 - **GitHub Issues**：[hooosberg/Rushi/issues](https://github.com/hooosberg/Rushi/issues)
-- **Email**：rushi.app@protonmail.com
+- **Email**：zikedece@proton.me
 
 如经文有任何错字、版权疑问或更佳底本，请直接开 issue 或 PR。
