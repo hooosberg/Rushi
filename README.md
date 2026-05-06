@@ -40,7 +40,7 @@
   </a>
 </p>
 
-> 🚧 **App Store: coming soon.** Source scriptures are already public — see `scriptures/` below.
+> ✅ **Now on the App Store — free.** [Download Rushi](https://apps.apple.com/us/app/rushi-sutra-mala-meditation/id6766074713) · Source scriptures are public — see `scriptures/` below.
 
 **Rushi (如是)** is a quiet iPhone &amp; iPad app for reading the **Diamond Sutra** and **Heart Sutra**, working a 108-bead mala, copying scripture, and sitting with meditation soundscapes. Everything stays on your device — no account, no analytics, no third-party trackers.
 
